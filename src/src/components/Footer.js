@@ -6,8 +6,29 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io5";
 import { IoLogoLinkedin } from "react-icons/io5";
+import './Footer.css';
+import { useEffect } from 'react';
+import { FaArrowUp } from "react-icons/fa";
 
 const Footer = () => {
+
+    useEffect(() => {
+        const size = 10;
+        const text = document.querySelector('.text p');
+        text.innerHTML = text.innerText
+            .split("")
+            .map((char, i) => `<span className="text-span" style="transform:rotate(${i * size}deg)">${char}</span>`)
+            .join("");
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+
   return (
     <div>
         <div className="flex items-center justify-center">
@@ -77,37 +98,37 @@ const Footer = () => {
                                 <li>
                                     <a
                                     href="#"
-                                    class="font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class="font-medium  hover:text-[#888888] transition-all duration-200"
                                     >General</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Business</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Sports</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Politics</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Entertainment</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class="relative  font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class="relative  font-medium  hover:text-[#888888] transition-all duration-200"
                                     >
                                     View Live Demo
                                     <span
@@ -118,49 +139,49 @@ const Footer = () => {
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Health</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Science</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Technology</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Travel</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >World</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Cars</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Religion</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Family</a>
                                 </li>
                             </ul>
@@ -177,37 +198,37 @@ const Footer = () => {
                                 <li>
                                     <a
                                     href="#"
-                                    class="font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class="font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Achievements</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >International</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Academics</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Beyond The Campus</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Placements</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class="relative  font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class="relative  font-medium  hover:text-[#888888] transition-all duration-200"
                                     >
                                     Cultural Events
                                     <span
@@ -218,49 +239,49 @@ const Footer = () => {
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Reviews</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Internship</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Technical Events</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Hackathon</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Startup</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Department</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Festival</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium text-lightBlue500 hover:text-[#888888] transition-all duration-200"
+                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Help Desk</a>
                                 </li>
                             </ul>
@@ -313,9 +334,19 @@ const Footer = () => {
                                     <p className="text-sm">All Rights Reserved</p>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
-                    
+                </div>
+            </div>
+            <div className="relative">
+                <div className="circle absolute bottom-0 right-0 mb-10 mr-10 w-24 h-24 border-white rounded-full border-solid border-[2px]">
+                    <div className="relative text">
+                        <p className="absolute text-sm text-[10px] font-bold">News Aggregator - News Aggregator - </p>
+                    </div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"  onClick={scrollToTop}>
+                        <FaArrowUp/>
+                    </div>
                 </div>
             </div>
         </footer>
