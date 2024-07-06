@@ -1,6 +1,7 @@
 import React from 'react';
 import img from '../logo news.png';
 import indiaflag from '../india-flag.svg';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -13,23 +14,23 @@ const Navbar = () => {
 
                 <ul className="flex space-x-10">
                     <li className="text-white text-xl font-serif py-7 hover:text-blue-500 cursor-pointer transition-all duration-200 relative group hidden lg:block">
-                        <a href="#">Home</a>  
+                        <Link to="/">Home</Link>
                         <div className="absolute bottom-0 w-full h-1 bg-blue-500 hidden group-hover:block transition-all duration-200"></div>
                     </li>
                     <li className="text-white text-xl font-serif py-7 hover:text-blue-500 cursor-pointer transition-all duration-200 relative group hidden lg:block">
-                        <a href="#">Search</a>
+                        <Link to="/search">Search</Link>
                         <div className="absolute bottom-0 w-full h-1 bg-blue-500 hidden group-hover:block transition-all duration-200"></div>
                     </li>
                     <li className="text-white text-xl font-serif py-7 hover:text-blue-500 cursor-pointer transition-all duration-200 relative group hidden lg:block">
-                        <a href="#">Favourite</a>
+                        <Link to="/favourite">Favourite</Link>
                         <div className="absolute bottom-0 w-full h-1 bg-blue-500 hidden group-hover:block transition-all duration-200"></div>
                     </li>
                     <li className="text-white text-xl font-serif py-7 hover:text-blue-500 cursor-pointer transition-all duration-200 relative group hidden lg:block">
-                        <a href="#">Support</a>
+                        <Link to="/support">Support</Link>
                         <div className="absolute bottom-0 w-full h-1 bg-blue-500 hidden group-hover:block transition-all duration-200"></div>
                     </li>
                     <li className="text-white text-xl font-serif py-7 hover:text-blue-500 cursor-pointer transition-all duration-200 relative group hidden lg:block">
-                        <a href="#">Setting</a>
+                        <Link to="/settings">Settings</Link>
                         <div className="absolute bottom-0 w-full h-1 bg-blue-500 hidden group-hover:block transition-all duration-200"></div>
                     </li>  
                 </ul>

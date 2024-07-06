@@ -1,0 +1,23 @@
+.text span{
+    position: absolute;
+    font-size: 1em;
+    transform-origin: 0px 50px;
+    bottom: -16px;
+    left: 46px;
+}
+
+.text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 10s linear infinite;
+}
+
+@keyframes rotateText{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
