@@ -34,9 +34,9 @@ import Explore from './components/Explore';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Search from './components/Search';
+import Support from './components/support'; // Import the Support component
 
 const Favourite = () => <div>Favourite Page</div>;
-const Support = () => <div>Support Page</div>;
 const Settings = () => <div>Settings Page</div>;
 
 function App() {
@@ -52,7 +52,7 @@ function App() {
           <Route path="/explore" element={<Explore />} />
           <Route path="/search" element={<Search />} />
           <Route path="/favourite" element={<Favourite />} />
-          <Route path="/support" element={<Support />} />
+          <Route path="/support" element={<Support />} /> {/* Add the Support route */}
           <Route path="/settings" element={<Settings />} />
         </Routes>
         <Footer />

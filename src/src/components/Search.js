@@ -6,8 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import defaultImage from '../news-notdefined.jpeg';
 import { useLocation } from 'react-router-dom'; // Import useLocation hook to access URL parameters
 
-const apiKey = 'b63b320651864d19809352d85179c59c';
-
+// const apiKey = 'b63b320651864d19809352d85179c59c';
+const apiKey = '27263c6b7b6549329d9a5f3a407f2f0a'
 const Search = () => {
   const location = useLocation(); // Access current location to get URL parameters
   const [searchQuery, setSearchQuery] = useState('');
