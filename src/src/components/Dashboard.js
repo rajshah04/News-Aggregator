@@ -5,7 +5,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import defaultImage from '../news-notdefined.jpeg';
 
-const apiKey = 'f81f4118de804985bce1e1bb2dde5984';
+// const apiKey = 'f81f4118de804985bce1e1bb2dde5984';
+const apiKey = 'b63b320651864d19809352d85179c59c'
 
 const Dashboard = () => {
   const [selectedCategory, setSelectedCategory] = useState('general');

@@ -4,16 +4,28 @@ import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import defaultImage from '../news-notdefined.jpeg';
+import { useLocation } from 'react-router-dom'; // Import useLocation hook to access URL parameters
 
-const apiKey = 'f81f4118de804985bce1e1bb2dde5984';
+const apiKey = 'b63b320651864d19809352d85179c59c';
 
 const Search = () => {
+  const location = useLocation(); // Access current location to get URL parameters
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedNews, setSelectedNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [isSearching, setIsSearching] = useState(false);
   const [likedArticles, setLikedArticles] = useState([]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search); // Get URL parameters
+    const category = params.get('q'); // Get the 'q' parameter from URL (category name)
+
+    if (category) {
+      setSearchQuery(category); // Set searchQuery to the category obtained from URL
+      fetchSearchData(category, currentPage); // Fetch data for the specified category
+    }
+  }, [location.search, currentPage]); // Trigger effect on location.search or currentPage change
 
   useEffect(() => {
     if (searchQuery) {
