@@ -1,4 +1,3 @@
-// src/components/Support.js
 import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
