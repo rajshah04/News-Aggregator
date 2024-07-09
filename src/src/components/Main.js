@@ -3,7 +3,7 @@ import axios from 'axios';
 import defaultImage from '../news-notdefined.jpeg';
 import { FaAngleLeft } from "react-icons/fa6";
 
-const apiKey = 'f81f4118de804985bce1e1bb2dde5984';
+const apiKey = '9f14754a75274f1a893dba742f77425f';
 
 const Main = () => {
     const [heroImages, setHeroImages] = useState([]);
