@@ -27,7 +27,7 @@ function App() {
           <Route path="/explore" element={<Explore />} />
           <Route path="/search" element={<Search />} />
           <Route path="/favourite" element={<Favourite />} />
-          <Route path="/support" element={<Support />} />
+          <Route path="/support" element={<Support />} /> {/* Add the Support route */}
           <Route path="/settings" element={<Settings />} />
         </Routes>
         <Footer />
