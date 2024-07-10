@@ -1,0 +1,84 @@
+{
+  "status": "ok",
+  "totalResults": 6,
+  "articles": [
+    {
+      "source": {
+        "id": null,
+        "name": "Hindustan Times"
+      },
+      "author": "Sanya",
+      "title": "Katrina Kaif reacts to Isha Ambani's 'stunning' looks from Radhika Merchant and Anant Ambani's pre-wedding cruise - Hindustan Times",
+      "description": "Radhika Merchant and Anant Ambani's pre-wedding cruise in Italy and France was a star-studded affair. Check out Isha Ambani's pics from the opulent festivities. | Bollywood",
+      "url": "https://www.hindustantimes.com/entertainment/bollywood/katrina-kaif-reacts-isha-ambani-stunning-looks-radhika-merchant-anant-ambani-cruise-pics-pre-wedding-101719047381888.html",
+      "urlToImage": "https://www.hindustantimes.com/ht-img/img/2024/06/22/1600x900/Isha_Ambani_pics_cruise_1719047743666_1719047743876.jpg",
+      "publishedAt": "2024-06-22T09:50:03Z",
+      "content": "Social media had been abuzz with excitement as Anant Ambani, the youngest son of Reliance Industries chairman Mukesh Ambani, and Radhika Merchant, daughter of industrialist Viren Merchant, celebrated… [+2317 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Hindustan Times"
+      },
+      "author": "HT News Desk",
+      "title": "Centre sets up high-level panel to ensure transparent, smooth conduct of exams amid NEET, UGC-NET row - Hindustan Times",
+      "description": "The Ministry of Education announced a high-level committee of experts to ensure transparent smooth and fair conduct of examinations | Latest News India",
+      "url": "https://www.hindustantimes.com/india-news/centre-sets-up-high-level-panel-to-ensure-transparent-smooth-conduct-of-exams-amid-neet-ugc-net-rows-101719049306865.html",
+      "urlToImage": "https://www.hindustantimes.com/ht-img/img/2024/06/22/1600x900/Education_minister_Dharmendra_Pradhan_1719049416000_1719049416204.jpg",
+      "publishedAt": "2024-06-22T09:45:15Z",
+      "content": "The Ministry of Education on Saturday announced a high-level committee of experts to ensure transparent smooth and fair conduct of examinations amid the NEET and UGC-NET row. \r\nThe panel of experts w… [+2130 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "The Hindu"
+      },
+      "author": null,
+      "title": "A progressive Indian policy on Myanmar outlined",
+      "description": "New Delhi’s stance of defining its ‘interests’ in the Southeast Asian country in narrow strategic terms needs to change",
+      "url": "https://www.thehindu.com/opinion/op-ed/a-progressive-indian-policy-on-myanmar-outlined/article68317751.ece",
+      "urlToImage": "https://th-i.thgim.com/public/incoming/pgqu0k/article68317723.ece/alternates/LANDSCAPE_1200/GWRIK_28-8-2013_14-28-4_INDO-MYANMARBORDERPILLAR_HINDU_28082013_01.JPG",
+      "publishedAt": "2024-06-21T18:38:00Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NDTV News"
+      },
+      "author": "Press Trust of India",
+      "title": "Afghanistan Players Cook Their Own Food In Barbados. Here Is The Reason - NDTV Sports",
+      "description": "The non-availability of halal meat, a must-have in their menu, in their Bridgetown hotel forced Afghanistan cricket team stars to temporarily wear a chef's apron.",
+      "url": "https://sports.ndtv.com/cricket/how-lack-of-halal-meat-turned-afghanistan-cricketers-into-chefs-in-bridgetown-5939674",
+      "urlToImage": "https://c.ndtvimg.com/2024-06/ggchlsd_v_625x300_21_June_24.jpg?im=FeatureCrop,algorithm=dnn,width=1200,height=675",
+      "publishedAt": "2024-06-22T08:29:36Z",
+      "content": "For the Afghanistan cricketers, it was a meatball-sized problem to fork through! The non-availability of halal meat, a must-have in their menu, in their Bridgetown hotel forced them to temporarily we… [+2464 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NDTV News"
+      },
+      "author": null,
+      "title": "Inside Sonakshi Sinha And Zaheer Iqbal's Pre-Wedding Festivities. See New Pic - NDTV Movies",
+      "description": "Sonakshi Sinha's wedding festivities began earlier this week",
+      "url": "https://www.ndtv.com/entertainment/inside-sonakshi-sinha-and-zaheer-iqbals-pre-wedding-festivities-see-new-pic-5944657",
+      "urlToImage": "https://c.ndtvimg.com/2024-06/fl2rc248_sonakshi_625x300_22_June_24.jpeg",
+      "publishedAt": "2024-06-22T08:01:44Z",
+      "content": "Sonakshi and Zaheer with friends. (courtesy: mishraprachi)\r\nNew Delhi: The big, fat wedding festivities of actor Sonakshi Sinha and her longtime boyfriend Zaheer Iqbal started with a bang earlier thi… [+1693 chars]"
+    },
+    {
+      "source": {
+        "id": "the-times-of-india",
+        "name": "The Times of India"
+      },
+      "author": "TOI News Desk",
+      "title": "'Prepared futuristic vision for cooperation in new areas': PM Modi, Bangladesh PM Sheikh Hasina's joint s - The Times of India",
+      "description": "India News: NEW DELHI: Prime Minister Narendra Modi and Bangladesh's Prime Minister Sheikh Hasina underscored the robust and multifaceted relationship between Ind.",
+      "url": "https://timesofindia.indiatimes.com/india/prepared-futuristic-vision-for-cooperation-in-new-areas-pm-modi-bangladesh-pm-sheikh-hasinas-joint-statement/articleshow/111186175.cms",
+      "urlToImage": "https://static.toiimg.com/thumb/msid-111185848,width-1070,height-580,imgsize-1388076,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+      "publishedAt": "2024-06-22T08:00:00Z",
+      "content": null
+    }
+  ]
+}
