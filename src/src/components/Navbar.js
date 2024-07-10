@@ -8,9 +8,11 @@ const Navbar = () => {
     <div>
         <nav className="bg-black">
             <div className="relative w-[1080px] mx-auto flex items-center justify-between">
-                <div className='cursor-pointer py-7 pr-7'>
-                    <img src={img} width="40px" height="30px"/>
-                </div>
+                <Link to="/">
+                    <div className='cursor-pointer py-7 pr-7'>
+                        <img src={img} width="40px" height="30px"/>
+                    </div>
+                </Link>
 
                 <ul className="flex space-x-10">
                     <li className="text-white text-xl font-serif py-7 hover:text-blue-500 cursor-pointer transition-all duration-200 relative group hidden lg:block">
