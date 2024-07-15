@@ -12,27 +12,59 @@ import Search from './components/Search';
 import Favourite from './components/Favourite';
 import Support from './components/support';
 import Settings from './components/Settings';
+import { AuthProvider, AuthContext } from './AuthContext';
+import { useContext } from 'react';
+import Auth from './components/Auth';
 
 
 function App() {
+
+  const { isAuthenticated } = useContext(AuthContext);
+
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/popular" element={<Popular />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/favourite" element={<Favourite />} />
-          <Route path="/support" element={<Support />} /> 
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <div className="App">
+      {isAuthenticated ? (
+        <Router>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/popular" element={<Popular />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/favourite" element={<Favourite />} />
+            <Route path="/support" element={<Support />} /> 
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+      ) : (
+        <div>
+          <Auth />
+          {/* Hello */}
+        </div>
+      )}
+    </div>
+    // <Router>
+    //   <div className="App">
+    //     <Navbar />
+    //     <Routes>
+    //       <Route path="/" element={<Home />} />
+    //       <Route path="/categories" element={<Categories />} />
+    //       <Route path="/popular" element={<Popular />} />
+    //       <Route path="/dashboard" element={<Dashboard />} />
+    //       <Route path="/explore" element={<Explore />} />
+    //       <Route path="/search" element={<Search />} />
+    //       <Route path="/favourite" element={<Favourite />} />
+    //       <Route path="/support" element={<Support />} /> 
+    //       <Route path="/settings" element={<Settings />} />
+    //     </Routes>
+    //     <Footer />
+    //   </div>
+    // </Router>
   );
 }
 

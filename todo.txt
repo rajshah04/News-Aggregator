@@ -1,0 +1,4 @@
+1. check for port in old env file
+2. discuss with team about support, search and favourite pages not being full width of the size of window OR
+ask THEM to convert the login signup to tailwind css
+
