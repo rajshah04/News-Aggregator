@@ -1,0 +1,94 @@
+import React from 'react'
+import './Auth.css' ;    
+import axios from 'axios';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
+import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+
+
+const SignUpForm = () => {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    const [showPassword, setShowPassword] = useState(false) ;
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false) ;
+
+    const handleSignUp = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:4000/api/v1/signup', { firstName, lastName, email, password, confirmPassword });
+            toast.success("Sign Up Success");
+        } catch (error) {
+            console.error('There was an error registering!', error);
+            toast.error("There was an error registering");
+        } finally {
+            setFirstName('');
+            setLastName('');
+            setEmail('');
+            setPassword('');
+            setConfirmPassword('') ;
+        }
+    };
+
+    return (
+        <form onSubmit={handleSignUp}>
+            <h1 className='font-bold text-3xl'>Create Account</h1>
+            <span>or use your email for registration</span>
+            <div className='fild'>
+                <input type="text" className='firstname' placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                <input type="text" className='lastname' placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+            </div>
+
+            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+
+            <input type={showPassword ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            {showPassword ? (
+                <AiOutlineEyeInvisible
+                onClick={() => {
+                    setShowPassword(false);
+                    console.log(showPassword);
+                }}
+                fontSize={24}
+                fill="#AFB2BF"
+                />
+            ) : (
+                <AiOutlineEye
+                onClick={() => {
+                    setShowPassword(true);
+                    console.log(showPassword);
+                }}
+                fontSize={24}
+                fill="#AFB2BF"
+                />
+            )}
+
+            <input type={showConfirmPassword ? "text" : "password"} placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+            {showConfirmPassword ? (
+                    <AiOutlineEyeInvisible
+                    onClick={() => {
+                        setShowConfirmPassword(false);
+                        console.log(showConfirmPassword);
+                    }}
+                    fontSize={24}
+                    fill="#AFB2BF"
+                    />
+                ) : (
+                    <AiOutlineEye
+                    onClick={() => {
+                        setShowConfirmPassword(true);
+                        console.log(showConfirmPassword);
+                    }}
+                    fontSize={24}
+                    fill="#AFB2BF"
+                    />
+                )}
+                
+            <button type="submit">Sign Up</button>
+        </form>
+    );
+}
+
+export default SignUpForm ;

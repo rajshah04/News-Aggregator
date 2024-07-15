@@ -94,94 +94,94 @@ const Footer = () => {
                                 <GrTopCorner className='text-4xl text-blue-700' />
                                 <h3 className='-mt-6 text-2xl font-bold text-left pl-6'>CATEGORIES</h3>
                             </div> 
-                            <ul class="space-y-2">
+                            <ul className="space-y-2">
                                 <li>
                                     <a
                                     href="#"
-                                    class="font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className="font-medium  hover:text-[#888888] transition-all duration-200"
                                     >General</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Business</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Sports</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Politics</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Entertainment</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class="relative  font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className="relative  font-medium  hover:text-[#888888] transition-all duration-200"
                                     >
                                     View Live Demo
                                     <span
-                                        class="text-white  uppercase bg-green-500 rounded-sm text-xs font-bold p-1"
+                                        className="text-white  uppercase bg-green-500 rounded-sm text-xs font-bold p-1"
                                         >New</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Health</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Science</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Technology</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Travel</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >World</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Cars</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Religion</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Family</a>
                                 </li>
                             </ul>
@@ -194,94 +194,94 @@ const Footer = () => {
                                 <GrTopCorner className='text-4xl text-blue-700' />
                                 <h3 className='-mt-6 text-2xl font-bold text-left pl-6'>POPULAR POST</h3>
                             </div> 
-                            <ul class="space-y-2">
+                            <ul className="space-y-2">
                                 <li>
                                     <a
                                     href="#"
-                                    class="font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className="font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Achievements</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >International</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Academics</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Beyond The Campus</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Placements</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class="relative  font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className="relative  font-medium  hover:text-[#888888] transition-all duration-200"
                                     >
                                     Cultural Events
                                     <span
-                                        class="text-white  uppercase bg-green-500 rounded-sm text-xs font-bold p-1"
+                                        className="text-white  uppercase bg-green-500 rounded-sm text-xs font-bold p-1"
                                         >New</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Reviews</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Internship</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Technical Events</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Hackathon</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Startup</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Department</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Festival</a>
                                 </li>
                                 <li>
                                     <a
                                     href="#"
-                                    class=" font-medium  hover:text-[#888888] transition-all duration-200"
+                                    className=" font-medium  hover:text-[#888888] transition-all duration-200"
                                     >Help Desk</a>
                                 </li>
                             </ul>
