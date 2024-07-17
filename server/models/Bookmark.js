@@ -15,6 +15,9 @@ const bookmarkSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    image: {
+        type: String,
+    },
     url: {
         type: String,
         required: true,

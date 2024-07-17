@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import defaultImage from '../news-notdefined.jpeg';
 import LanguageSelector from './language-selector';
 import { useTranslation } from 'react-i18next';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Settings = () => {
   const { t } = useTranslation();
@@ -81,27 +83,31 @@ const clickHandler = (article) => {
   };
 
   return (
-    <div className="w-full h-full px-32 py-14 bg-black">
-        <h2 className="font-bold text-white text-[32px] pt-20 text-center uppercase">
-            multilanguage&nbsp;
-            <span className="text-blue-700 uppercase">support</span>
-        </h2>
-        <h2 className="font-bold text-[#888888] text-[16px] pt-2 text-center">
-            most recent news
-        </h2>
-      {/* Toast Container */}
-      <ToastContainer />
+    <div>
+      <Navbar />
+      <div className="w-full h-full px-32 py-14 bg-black">
+          <h2 className="font-bold text-white text-[32px] pt-20 text-center uppercase">
+              multilanguage&nbsp;
+              <span className="text-blue-700 uppercase">support</span>
+          </h2>
+          <h2 className="font-bold text-[#888888] text-[16px] pt-2 text-center">
+              most recent news
+          </h2>
+        {/* Toast Container */}
+        <ToastContainer />
 
-      {/* Language Selector */}
-      <div className="mt-10 flex justify-center text-white space-x-4">
-        <LanguageSelector className="border-2 border-solid border-blue-700" />
-      </div>
+        {/* Language Selector */}
+        <div className="mt-10 flex justify-center text-white space-x-4">
+          <LanguageSelector className="border-2 border-solid border-blue-700" />
+        </div>
 
-      {/* Selected News Section */}
-      <div id="selectedNews" className="mb-8">
-        <h2 className="text-3xl font-bold text-center mb-6">{t("topHeadlines")}</h2>
-        {renderNewsCards(selectedNews)}
+        {/* Selected News Section */}
+        <div id="selectedNews" className="mb-8">
+          <h2 className="text-3xl font-bold text-center mb-6">{t("topHeadlines")}</h2>
+          {renderNewsCards(selectedNews)}
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

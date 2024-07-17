@@ -1,4 +1,4 @@
-1. check for port in old env file
+1. check for port in old env file -- done
 2. discuss with team about support, search and favourite pages not being full width of the size of window OR
-ask THEM to convert the login signup to tailwind css
-
+ask THEM to convert the login signup to tailwind css -- done
+3. write code to delete the bookmarked news

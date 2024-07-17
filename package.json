@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "react-router-dom": "^6.24.1"
+  },
+  "name": "news-aggregator",
+  "description": "Welcome to NewsHive, a multilingual news aggregation platform designed to provide accurate, timely, and personalized news to users in their preferred language. NewsHive aims to break down language barriers and unify fragmented news platforms into a single, cohesive user experience.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently -n \"client,server\" -c \"bgBlue,bgGreen\" \"npm run client\" \"npm run server\"",
+    "server": "cd server && npm run dev",
+    "client": "npm start --prefix src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -24,13 +24,14 @@ const SignUpForm = () => {
         } catch (error) {
             console.error('There was an error registering!', error);
             toast.error("There was an error registering");
-        } finally {
-            setFirstName('');
-            setLastName('');
-            setEmail('');
-            setPassword('');
-            setConfirmPassword('') ;
         }
+        // finally {
+        //     setFirstName('');
+        //     setLastName('');
+        //     setEmail('');
+        //     setPassword('');
+        //     setConfirmPassword('') ;
+        // }
     };
 
     return (
@@ -44,9 +45,9 @@ const SignUpForm = () => {
 
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
-            <input type={showPassword ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input type={showPassword ? "text" : "password"} className='relative' placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
             {showPassword ? (
-                <AiOutlineEyeInvisible
+                <AiOutlineEyeInvisible className='cursor-pointer absolute translate-x-[125px] translate-y-[30px]'
                 onClick={() => {
                     setShowPassword(false);
                     console.log(showPassword);
@@ -55,7 +56,7 @@ const SignUpForm = () => {
                 fill="#AFB2BF"
                 />
             ) : (
-                <AiOutlineEye
+                <AiOutlineEye className='cursor-pointer absolute translate-x-[125px] translate-y-[30px]'
                 onClick={() => {
                     setShowPassword(true);
                     console.log(showPassword);
@@ -67,7 +68,7 @@ const SignUpForm = () => {
 
             <input type={showConfirmPassword ? "text" : "password"} placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
             {showConfirmPassword ? (
-                    <AiOutlineEyeInvisible
+                    <AiOutlineEyeInvisible className='cursor-pointer absolute translate-x-[125px] translate-y-[85px]'
                     onClick={() => {
                         setShowConfirmPassword(false);
                         console.log(showConfirmPassword);
@@ -76,7 +77,7 @@ const SignUpForm = () => {
                     fill="#AFB2BF"
                     />
                 ) : (
-                    <AiOutlineEye
+                    <AiOutlineEye className='cursor-pointer absolute translate-x-[125px] translate-y-[85px]'
                     onClick={() => {
                         setShowConfirmPassword(true);
                         console.log(showConfirmPassword);
@@ -86,7 +87,7 @@ const SignUpForm = () => {
                     />
                 )}
                 
-            <button type="submit">Sign Up</button>
+            <button type="submit" >Sign Up</button>
         </form>
     );
 }
