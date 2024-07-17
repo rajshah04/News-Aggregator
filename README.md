@@ -67,7 +67,6 @@ NewsHive addresses these challenges by offering a seamless, multilingual news ex
 
 - Browse news articles in your preferred language.
 - Customize your news feed based on your interests.
-- Download articles for offline reading.
 
 ## Team Members
 
