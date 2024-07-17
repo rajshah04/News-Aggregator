@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FcLike, FcLikePlaceholder } from "react-icons/fc"; 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 import defaultImage from '../news-notdefined.jpeg';
 import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
@@ -129,7 +130,8 @@ const Search = () => {
       <Navbar />
       <div className="w-full h-full px-32 py-14 bg-black">
       {/* Toast Container */}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
+      <Toaster />
 
       {/* Search Bar */}
       <div className="mb-8 flex justify-center">

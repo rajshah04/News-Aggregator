@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
@@ -14,7 +15,7 @@ const Support = () => {
     emailjs.sendForm('service_c4fs5dj', 'template_1q1p6uq', form.current, 'bNphPVuMuzYLkPSKZ')
       .then((result) => {
         console.log(result.text);
-        toast.success("Message sent successfully!");
+        toast.success("Message Sent!");
       }, (error) => {
         console.log(error.text);
         toast.error("Failed to send the message. Please try again.");
@@ -72,7 +73,8 @@ const Support = () => {
         </section>
       </div>
       {/* Toast Container */}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
+      <Toaster />
       </div>
       <Footer />
     </div>

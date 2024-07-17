@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthProvider, AuthContext } from '../AuthContext';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -14,6 +15,7 @@ const Navbar = () => {
         localStorage.removeItem("token") ;
         navigate("/") ;
         setIsAuthenticated(false) ;
+        toast.success("Logged out.")
     }
 
   return (
