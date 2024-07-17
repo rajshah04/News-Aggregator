@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 const Support = () => {
   const form = useRef();
@@ -22,7 +24,9 @@ const Support = () => {
   };
 
   return (
-    <div className="support-page bg-black py-10">
+    <div>
+      <Navbar />
+      <div className="support-page bg-black py-10">
       <div className="container mx-auto px-4">
         <section id="contact" className="flex flex-col items-center text-center">
           <h1 className="text-4xl font-bold mb-8 text-white">Support</h1>
@@ -69,6 +73,8 @@ const Support = () => {
       </div>
       {/* Toast Container */}
       <ToastContainer />
+      </div>
+      <Footer />
     </div>
   );
 };
