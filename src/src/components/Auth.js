@@ -6,7 +6,7 @@ import SignInForm from './SignInForm' ;
 import toast from 'react-hot-toast';
 
 const Auth = () => {
-    const [isActive, setIsActive] = useState(true);
+    const [isActive, setIsActive] = useState(false);
     function handleSignIn() {
         setIsActive(false)
         // navigate('/signin')
