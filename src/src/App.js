@@ -88,7 +88,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Search from './components/Search';
 import Favourite from './components/Favourite';
-import Support from './components/Support';
+import Support from './components/support';
 import Settings from './components/Settings';
 import { AuthProvider, AuthContext } from './AuthContext';
 import Auth from './components/Auth';
