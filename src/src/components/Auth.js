@@ -7,8 +7,11 @@ import toast from 'react-hot-toast';
 
 const Auth = () => {
     const [isActive, setIsActive] = useState(false);
+    // false -> signin
+    // true -> signup
+
     function handleSignIn() {
-        setIsActive(false)
+        setIsActive(false) ;
         // navigate('/signin')
     }
 
@@ -16,7 +19,7 @@ const Auth = () => {
         <div className='wrapper'>
             <div className={`container2 ${isActive ? 'active' : ''} `} id="container2">
             <div className="form-container2 sign-up">
-                <SignUpForm />
+                <SignUpForm setIsActive={setIsActive} />
             </div>
             <div className="form-container2 sign-in">
                 <SignInForm />

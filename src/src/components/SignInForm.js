@@ -26,12 +26,12 @@ const SignInForm = () => {
             localStorage.setItem('token', token);
             // console.log(response.data.token) ;
             setIsAuthenticated(true) ;          
-            navigate('/home') ;
             toast.success("Successfully logged in");
+            navigate('/home') ;
 
         } catch (error) {
-            console.error('There was an error logging in!', error);
-            toast.error("There was an error logging in");
+            console.log('There was an error logging in!', error);
+            toast.error(error.response.data.message);
         }
     };
 

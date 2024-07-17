@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FcLike, FcLikePlaceholder } from "react-icons/fc"; 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 import defaultImage from '../news-notdefined.jpeg';
 import LanguageSelector from './language-selector';
 import { useTranslation } from 'react-i18next';
@@ -94,7 +95,8 @@ const clickHandler = (article) => {
               most recent news
           </h2>
         {/* Toast Container */}
-        <ToastContainer />
+        {/* <ToastContainer /> */}
+        <Toaster />
 
         {/* Language Selector */}
         <div className="mt-10 flex justify-center text-white space-x-4">

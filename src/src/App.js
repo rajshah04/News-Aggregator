@@ -88,10 +88,9 @@ import Search from './components/Search';
 import Favourite from './components/Favourite';
 import Support from './components/Supp';
 import Settings from './components/Settings';
+import SignInForm from './components/SignInForm';
 import { AuthProvider, AuthContext } from './AuthContext';
 import Auth from './components/Auth';
-import SignUpForm from './components/SignUpForm';
-import SignInForm from './components/SignInForm';
 
 function App() {
   const { isAuthenticated } = useContext(AuthContext);
@@ -120,8 +119,7 @@ function App() {
             </>
           ) : (
             <>
-           
-            <Auth />
+              <Auth />
             </>
           )}
         </div>

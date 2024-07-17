@@ -1,8 +1,9 @@
 import React, { useState, useEffect, lazy } from 'react';
 import axios from 'axios';
 import { FcLike, FcLikePlaceholder } from "react-icons/fc"; 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+import toast, { Toaster } from 'react-hot-toast';
+// import 'react-toastify/dist/ReactToastify.css';
 import defaultImage from '../news-notdefined.jpeg';
 
 const apiKey = '9f14754a75274f1a893dba742f77425f';
@@ -20,7 +21,7 @@ const Dashboard = () => {
     let updatedLikedArticles;
     if (likedArticles.some((a) => a.title === article.title)) {
       updatedLikedArticles = likedArticles.filter((a) => a.title !== article.title);
-      toast.warning("Like Removed");
+      toast.success("Like Removed");
     } else {
       updatedLikedArticles = [...likedArticles, article];
       toast.success("Liked Successfully");
@@ -154,7 +155,8 @@ const Dashboard = () => {
             most recent news
         </h2>
       {/* Toast Container */}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
+      <Toaster />
 
       {/* Navigation Bar */}
       {!isSearching && (

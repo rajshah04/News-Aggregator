@@ -4,14 +4,17 @@ import axios from 'axios';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 
 
-const SignUpForm = () => {
+const SignUpForm = ({setIsActive}) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+
+    const navigate = useNavigate() ;
 
     const [showPassword, setShowPassword] = useState(false) ;
     const [showConfirmPassword, setShowConfirmPassword] = useState(false) ;
@@ -20,10 +23,18 @@ const SignUpForm = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:4000/api/v1/signup', { firstName, lastName, email, password, confirmPassword });
-            toast.success("Sign Up Success");
+            toast.success("Successfully Signed Up");
+            setFirstName("") ;
+            setLastName("") ;
+            setEmail("") ;
+            setPassword("") ;
+            setConfirmPassword("") ;
+            setIsActive(false) ;
+            navigate("/") ;
         } catch (error) {
             console.error('There was an error registering!', error);
-            toast.error("There was an error registering");
+            // toast.error("There was an error registering");
+            toast.error(error.response.data.message);
         }
         // finally {
         //     setFirstName('');
