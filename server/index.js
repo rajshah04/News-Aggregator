@@ -21,7 +21,7 @@ const news = require("./routes/news") ;
 app.use("/api/v1", news) ;
 
 app.get("/", () => {
-    console.log(`App is running on post no. {}`)
+    console.log(`App is running on port no. ${PORT}`)
 })
 
 // activate
