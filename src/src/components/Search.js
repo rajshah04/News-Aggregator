@@ -65,7 +65,7 @@ const Search = () => {
     let updatedLikedArticles;
     if (likedArticles.some((a) => a.title === article.title)) {
       updatedLikedArticles = likedArticles.filter((a) => a.title !== article.title);
-      toast.warning("Like Removed");
+      toast.success("Like Removed");
     } else {
       updatedLikedArticles = [...likedArticles, article];
       toast.success("Liked Successfully");
@@ -131,7 +131,7 @@ const Search = () => {
       <div className="w-full h-full px-32 py-14 bg-black">
       {/* Toast Container */}
       {/* <ToastContainer /> */}
-      <Toaster />
+      {/* <Toaster /> */}
 
       {/* Search Bar */}
       <div className="mb-8 flex justify-center">

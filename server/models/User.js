@@ -26,10 +26,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         ref: "Profile"
     },
-    bookmarkedNews: {
+    bookmarkedNews: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Bookmark"
-    },
+    }],
     image: {
         type: String,
         required: true

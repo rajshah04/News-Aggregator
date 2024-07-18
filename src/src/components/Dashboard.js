@@ -156,7 +156,7 @@ const Dashboard = () => {
         </h2>
       {/* Toast Container */}
       {/* <ToastContainer /> */}
-      <Toaster />
+      {/* <Toaster /> */}
 
       {/* Navigation Bar */}
       {!isSearching && (

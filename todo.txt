@@ -2,4 +2,5 @@
 2. discuss with team about support, search and favourite pages not being full width of the size of window OR
 ask THEM to convert the login signup to tailwind css -- done
 3. write code to delete the bookmarked news
-4. check in postman for routes
+4. check in postman for routes, remaining for deleteBookmarkedNews
+5. think and write logic for addToBookmarked and getAllBookmarkedNews in frontend

@@ -74,7 +74,7 @@ const Support = () => {
       </div>
       {/* Toast Container */}
       {/* <ToastContainer /> */}
-      <Toaster />
+      {/* <Toaster /> */}
       </div>
       <Footer />
     </div>

@@ -21,7 +21,7 @@ const clickHandler = (article) => {
     if (articleIndex !== -1) {
       updatedLikedArticles = [...likedArticles];
       updatedLikedArticles.splice(articleIndex, 1);
-      toast.warning("Like Removed");
+      toast.success("Like Removed");
     } else {
       updatedLikedArticles = [...likedArticles, article];
       toast.success("Liked Successfully");
@@ -96,7 +96,7 @@ const clickHandler = (article) => {
           </h2>
         {/* Toast Container */}
         {/* <ToastContainer /> */}
-        <Toaster />
+        {/* <Toaster /> */}
 
         {/* Language Selector */}
         <div className="mt-10 flex justify-center text-white space-x-4">
