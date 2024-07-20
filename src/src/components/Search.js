@@ -9,8 +9,9 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-const apiKey = '9f14754a75274f1a893dba742f77425f';
-
+// const apiKey = '9f14754a75274f1a893dba742f77425f';
+const apiKey = '29f8e42efe874ee2be23f0d1edb6844b';
+// const apiKey ='4dbc17e007ab436fb66416009dfb59a8';
 const Search = () => {
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');

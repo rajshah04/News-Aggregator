@@ -18,7 +18,7 @@ const Favourite = () => {
       return (
         <div>
           {/* <Navbar /> */}
-          <p className="text-center text-white">No favourite articles yet.</p>;
+          <p className="text-center text-white">No favourite articles yet.</p>
           {/* <Footer /> */}
         </div>
 

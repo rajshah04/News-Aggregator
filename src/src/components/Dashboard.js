@@ -6,8 +6,9 @@ import toast, { Toaster } from 'react-hot-toast';
 // import 'react-toastify/dist/ReactToastify.css';
 import defaultImage from '../news-notdefined.jpeg';
 
-const apiKey = '9f14754a75274f1a893dba742f77425f';
-
+// const apiKey = '9f14754a75274f1a893dba742f77425f';
+// const apiKey = '29f8e42efe874ee2be23f0d1edb6844b';
+const apiKey ='4dbc17e007ab436fb66416009dfb59a8';
 const Dashboard = () => {
   const [selectedCategory, setSelectedCategory] = useState('general');
   const [selectedNews, setSelectedNews] = useState([]);

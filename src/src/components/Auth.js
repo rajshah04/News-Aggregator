@@ -18,10 +18,10 @@ const Auth = () => {
     return (
         <div className='wrapper'>
             <div className={`container2 ${isActive ? 'active' : ''} `} id="container2">
-            <div className="form-container2 sign-up">
+            <div className="form-container2 sign-up text-white">
                 <SignUpForm setIsActive={setIsActive} />
             </div>
-            <div className="form-container2 sign-in">
+            <div className="form-container2 sign-in text-white">
                 <SignInForm />
             </div>
             <div className="toggle-container2">
