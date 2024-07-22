@@ -11,16 +11,15 @@ exports.addToBookmarkedNews = async(req, res) => {
         console.log("User id : ", userId) ;
         console.log("Type of User id : ", typeof(userId)) ;
 
-        const {title, description, author, image, url} = req.body ;
+        const {title, description = "", author, urlToImage, url, publishedAt} = req.body ;
         
         // validate data
-        if(!userId || !title || !description || !url){
+        if(!userId || !title || !url){
             return res.status(403).json({
                 success: false,
                 message: "All fields are required.",
                 userId,
                 title,
-                description,
                 url
             }) ;    
         }
@@ -29,8 +28,10 @@ exports.addToBookmarkedNews = async(req, res) => {
         const bookmarkedNews = await Bookmark.create({title: title,
             description: description,
             author: author,
-            image: image,
+            image: urlToImage,
             url: url,
+            publishedAt: publishedAt,
+            bookmarkedAt: Date.now(),
             // user: userId
         }) ;
 
@@ -73,7 +74,10 @@ exports.getAllBookmarkedNews = async(req, res) => {
         const userId = req.user.id ;
 
         // get the bookmarked news of the user
-        const userData = await User.findById({_id: userId}).populate("bookmarkedNews").exec() ;
+        const userData = await User.findById({_id: userId}).populate({
+            path: "bookmarkedNews",
+            options: { sort: { bookmarkedAt: -1 } }
+          }).exec() ;
 
         // which of the below 2 will work
         // const bookmarkedNews = user.bookmarkedNews.populate("bookmarkedNews").exec() ;
@@ -89,7 +93,7 @@ exports.getAllBookmarkedNews = async(req, res) => {
 
         // return response
         return res.status(200).json({
-            success: false,
+            success: true,
             message: "User's bookmarked news fetched.",
             bookmarkedNews
         }) ;
@@ -103,17 +107,58 @@ exports.getAllBookmarkedNews = async(req, res) => {
     }
 }
 
-// TODO: delete bookmarked news
+// TODO: done -- delete bookmarked news
 exports.deleteBookmarkedNews = async(req, res) => {
     try{
         // get user id
         const userId = req.user.id ;
 
-        // get news id
-        const {newsId} = req.body ;
+        // get news title
+        const {title} = req.body ;
+
+        // get id from title
+        const news = await Bookmark.findOne({title: title}) ;
+        console.log("News : ", news) ;
+
+        if(!news){
+            return res.status(404).json({
+                success: false,
+                message: "News not found"
+            });
+        }
+
+        const newsId = news._id ;
         
-        // update in DB
+        // delete from Bookmark DB
+        const deletedNews = await Bookmark.findByIdAndDelete(newsId) ;
+        console.log("Deleted News : ", deletedNews) ;
+
+        if (!deletedNews) {
+            return res.status(404).json({
+                success: false,
+                message: "News not found for deletion"
+            });
+        }
+
+        // update User schema
+        const updatedUserData = await User.findByIdAndUpdate({_id : userId},
+            {
+                $pull: {
+                    bookmarkedNews: newsId
+                },
+            },
+            {
+                new : true
+            }
+        ) ;
+
+        console.log("Updated User data : ", updatedUserData) ;
+
         // return response
+        return res.status(200).json({
+            success: true,
+            message: "News deleted successfully"
+        }) ;
         
     }catch(err){
         console.log(err) ;

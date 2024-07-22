@@ -28,6 +28,8 @@ const SignInForm = () => {
             setIsAuthenticated(true) ;          
             toast.success("Successfully logged in");
             navigate('/home') ;
+            localStorage.setItem("likedArticles", []) ;
+            console.log("Local Storage set to null") ;
 
         } catch (error) {
             console.log('There was an error logging in!', error);
