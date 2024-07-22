@@ -8,27 +8,81 @@ import LanguageSelector from './language-selector';
 import { useTranslation } from 'react-i18next';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import axios from 'axios';
 
 const Settings = () => {
   const { t } = useTranslation();
   const [selectedNews, setSelectedNews] = useState([]);
   const [likedArticles, setLikedArticles] = useState([]);
 
-const clickHandler = (article) => {
-    let updatedLikedArticles;
-    const articleIndex = likedArticles.findIndex((a) => a.title === article.title); // Adjust this comparison as per your article's unique identifier
-  
-    if (articleIndex !== -1) {
-      updatedLikedArticles = [...likedArticles];
-      updatedLikedArticles.splice(articleIndex, 1);
-      toast.success("Like Removed");
-    } else {
-      updatedLikedArticles = [...likedArticles, article];
-      toast.success("Liked Successfully");
+  const clickHandler = async (article) => {
+    try{
+      let updatedLikedArticles;
+
+      const token = localStorage.getItem('token'); 
+
+      console.log("Token from frontend : ", token) ;
+
+      const articleIndex = likedArticles.findIndex((a) => a.title === article.title); // Adjust this comparison as per your article's unique identifier
+    
+      if (articleIndex !== -1) {
+        updatedLikedArticles = [...likedArticles];
+        updatedLikedArticles.splice(articleIndex, 1);
+        // toast.success("Like Removed");
+
+        
+        console.log("Removing from bookmarked news") ;
+        console.log("Article : ", article) ;
+        console.log("Article's Title : ", article.title) ;
+        console.log("Token for removing the like", token) ;
+        // const removeFromBookmark = await axios.delete('http://localhost:4000/api/v1/deleteBookmarkedNews',
+        //   article.title,
+        //   {
+        //     headers: {
+        //       'Authorization': `Bearer ${token}` // Adjust this according to your API's requirements
+        //     },
+        //     token: token,
+        //     withCredentials: true // Include credentials in the request
+        //   }
+        // ) ;
+
+        const removeFromBookmark = await axios.delete('http://localhost:4000/api/v1/deleteBookmarkedNews', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          },
+          data: {
+            title: article.title,
+          }
+        });
+
+        console.log("Removed from Bookmark", removeFromBookmark) ;
+        // toast.success("Like Removed");
+        toast.success("Removed from Favourites");
+      } else {
+        updatedLikedArticles = [...likedArticles, article];
+        // toast.success("Liked Successfully");
+
+        console.log("Adding to bookmarked news") ;
+        console.log("Article : ", article) ;
+        const addToBookmark = await axios.post('http://localhost:4000/api/v1/addToBookmarkedNews', 
+          article, {
+          headers: {
+            'Authorization': `Bearer ${token}` // Adjust this according to your API's requirements
+          },
+          withCredentials: true // Include credentials in the request
+        }) ;
+
+        console.log("Add to Bookmark", addToBookmark) ;
+        // toast.success("Liked Successfully");
+        toast.success("Added to Favourites");
+      }
+    
+      setLikedArticles(updatedLikedArticles);
+      localStorage.setItem('likedArticles', JSON.stringify(updatedLikedArticles));
+    }catch(err){
+      console.error(err) ;
+      console.log(err.message) ;
     }
-  
-    setLikedArticles(updatedLikedArticles);
-    localStorage.setItem('likedArticles', JSON.stringify(updatedLikedArticles));
   };
   
   useEffect(() => {
