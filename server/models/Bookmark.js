@@ -8,7 +8,6 @@ const bookmarkSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true
     },
     author: {
         type: String,
@@ -19,6 +18,14 @@ const bookmarkSchema = new mongoose.Schema({
     },
     url: {
         type: String,
+    },
+    publishedAt: {
+        type: Date,
+        default: Date.now ,
+    },
+    bookmarkedAt:{
+        type: Date,
+        default: Date.now
     }
 }) ;
 

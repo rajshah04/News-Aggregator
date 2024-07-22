@@ -7,8 +7,8 @@ import toast, { Toaster } from 'react-hot-toast';
 import defaultImage from '../news-notdefined.jpeg';
 
 // const apiKey = '9f14754a75274f1a893dba742f77425f';
-// const apiKey = '29f8e42efe874ee2be23f0d1edb6844b';
-const apiKey ='4dbc17e007ab436fb66416009dfb59a8';
+const apiKey = '29f8e42efe874ee2be23f0d1edb6844b';
+// const apiKey ='4dbc17e007ab436fb66416009dfb59a8';
 const Dashboard = () => {
   const [selectedCategory, setSelectedCategory] = useState('general');
   const [selectedNews, setSelectedNews] = useState([]);
@@ -18,18 +18,130 @@ const Dashboard = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [likedArticles, setLikedArticles] = useState([]);
 
-  const clickHandler = (article) => {
-    let updatedLikedArticles;
-    if (likedArticles.some((a) => a.title === article.title)) {
-      updatedLikedArticles = likedArticles.filter((a) => a.title !== article.title);
-      toast.success("Like Removed");
-    } else {
-      updatedLikedArticles = [...likedArticles, article];
-      toast.success("Liked Successfully");
+  // const clickHandler = (article) => {
+  //   let updatedLikedArticles;
+  //   if (likedArticles.some((a) => a.title === article.title)) {
+  //     updatedLikedArticles = likedArticles.filter((a) => a.title !== article.title);
+  //     toast.success("Like Removed");
+  //   } else {
+  //     updatedLikedArticles = [...likedArticles, article];
+  //     toast.success("Liked Successfully");
+  //   }
+  //   setLikedArticles(updatedLikedArticles);
+  //   localStorage.setItem('likedArticles', JSON.stringify(updatedLikedArticles));
+  // };
+
+  const clickHandler = async (article) => {
+    try{
+      let updatedLikedArticles;
+      const token = localStorage.getItem('token'); // Assuming the token is stored in local storage
+
+      console.log("Token from frontend : ", token) ;
+
+      // if (!likedArticles) {
+      //   console.log("likedArticles is undefined");
+      //   return;
+      // }
+    
+      if (likedArticles.some((a) => a.title === article.title)) {
+        updatedLikedArticles = likedArticles.filter((a) => a.title !== article.title);
+
+        console.log("Removing from bookmarked news") ;
+        console.log("Article : ", article) ;
+        console.log("Article's Title : ", article.title) ;
+        console.log("Token for removing the like", token) ;
+        // const removeFromBookmark = await axios.delete('http://localhost:4000/api/v1/deleteBookmarkedNews',
+        //   article.title,
+        //   {
+        //     headers: {
+        //       'Authorization': `Bearer ${token}` // Adjust this according to your API's requirements
+        //     },
+        //     token: token,
+        //     withCredentials: true // Include credentials in the request
+        //   }
+        // ) ;
+
+        const removeFromBookmark = await axios.delete('http://localhost:4000/api/v1/deleteBookmarkedNews', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          },
+          data: {
+            title: article.title,
+          }
+        });
+
+        console.log("Removed from Bookmark", removeFromBookmark) ;
+        // toast.success("Like Removed");
+        toast.success("Removed from Favourites");
+      } 
+      else {
+        updatedLikedArticles = [...likedArticles, article];
+        console.log("Adding to bookmarked news") ;
+        console.log("Article : ", article) ;
+        const addToBookmark = await axios.post('http://localhost:4000/api/v1/addToBookmarkedNews', 
+          article, {
+          headers: {
+            'Authorization': `Bearer ${token}` // Adjust this according to your API's requirements
+          },
+          withCredentials: true // Include credentials in the request
+        }) ;
+
+        console.log("Add to Bookmark", addToBookmark) ;
+        // toast.success("Liked Successfully");
+        toast.success("Added to Favourites");
+      }
+      setLikedArticles(updatedLikedArticles);
+      localStorage.setItem('likedArticles', JSON.stringify(updatedLikedArticles));
     }
-    setLikedArticles(updatedLikedArticles);
-    localStorage.setItem('likedArticles', JSON.stringify(updatedLikedArticles));
+    catch(err){
+      console.log(err) ;
+      console.log(err.message) ;
+    }
   };
+
+  // const clickHandler = async (article) => {
+  //   try {
+  //       let updatedLikedArticles;
+  //       const token = localStorage.getItem('token'); // Assuming the token is stored in local storage
+
+  //       console.log("Token from frontend: ", token);
+  //       if (likedArticles.some((a) => a.title === article.title)) {
+  //           updatedLikedArticles = likedArticles.filter((a) => a.title !== article.title);
+
+  //           console.log("Removing from bookmarked news");
+  //           console.log("Article: ", article);
+  //           console.log("Article's Title: ", article.title);
+  //           const removeFromBookmark = await axios.delete('http://localhost:4000/api/v1/deleteBookmarkedNews', {
+  //               headers: {
+  //                   'Authorization': `Bearer ${token}` // Adjust this according to your API's requirements
+  //               },
+  //               data: { title: article.title }, // Send the title in the data field
+  //               withCredentials: true // Include credentials in the request
+  //           });
+
+  //           console.log("Removed from Bookmark", removeFromBookmark);
+  //           toast.success("Like Removed");
+  //       } else {
+  //           updatedLikedArticles = [...likedArticles, article];
+  //           console.log("Adding to bookmarked news");
+  //           console.log("Article: ", article);
+  //           const addToBookmark = await axios.post('http://localhost:4000/api/v1/addToBookmarkedNews', article, {
+  //               headers: {
+  //                   'Authorization': `Bearer ${token}` // Adjust this according to your API's requirements
+  //               },
+  //               withCredentials: true // Include credentials in the request
+  //           });
+
+  //           console.log("Added to Bookmark", addToBookmark);
+  //           toast.success("Liked Successfully");
+  //       }
+  //       setLikedArticles(updatedLikedArticles);
+  //       localStorage.setItem('likedArticles', JSON.stringify(updatedLikedArticles));
+  //   } catch (err) {
+  //       console.log(err);
+  //       console.log(err.message);
+  //   }
+  // };
   
   useEffect(() => {
     const storedLikedArticles = localStorage.getItem('likedArticles');

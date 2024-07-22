@@ -2,11 +2,38 @@ import React, { useState, useEffect } from 'react';
 import defaultImage from '../news-notdefined.jpeg';
 import Footer from './Footer';
 import Navbar from './Navbar';
+import axios from 'axios' ;
 
 const Favourite = () => {
   const [likedArticles, setLikedArticles] = useState([]);
 
   useEffect(() => {
+    const fetchLikedArticles = async () => {
+      try {
+        const token = localStorage.getItem('token'); // Assuming the token is stored in local storage
+        const response = await axios.get('http://localhost:4000/api/v1/getAllBookmarkedNews', {
+          headers: {
+            'Authorization': `Bearer ${token}` // Adjust this according to your API's requirements
+          },
+          withCredentials: true // Include credentials in the request
+        });
+
+        console.log("API Response:", response);
+        console.log("API Response:", response.data.bookmarkedNews);
+
+        if (Array.isArray(response.data.bookmarkedNews)) {
+          setLikedArticles(response.data.bookmarkedNews);
+        } else {
+          console.error('Expected an array but received:', response.data.bookmarkedNews);
+        }
+      } catch (error) {
+        console.error('Error fetching liked articles:', error);
+      }
+    };
+
+    fetchLikedArticles();
+    // localStorage.setItem(likedArticles, likedArticles) ;
+
     const storedLikedArticles = localStorage.getItem('likedArticles');
     if (storedLikedArticles) {
       setLikedArticles(JSON.parse(storedLikedArticles));
@@ -28,12 +55,12 @@ const Favourite = () => {
     return (
       <div>
         {/* <Navbar /> */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 bg-black">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-4 bg-black">
           {likedArticles.map((article, index) => (
             <div key={index} className="bg-[#212121] rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
               <a href={article.url} target="_blank" rel="noopener noreferrer">
                 <img 
-                  src={article.urlToImage || defaultImage} 
+                  src={article.image || defaultImage} 
                   alt={article.title} 
                   className="w-full h-48 object-cover rounded-md mb-4" 
                 />
