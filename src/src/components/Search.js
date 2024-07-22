@@ -65,7 +65,7 @@ const Search = () => {
   const clickHandler = async (article) => {
     try{
       let updatedLikedArticles;
-      const token = localStorage.getItem('token'); // Assuming the token is stored in local storage
+      const token = localStorage.getItem('token'); 
 
       console.log("Token from frontend : ", token) ;
 
