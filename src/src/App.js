@@ -79,6 +79,7 @@
 import React, { useContext } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './components/ThemeContext';
 import Categories from './components/Categories';
 import Popular from './components/Popular';
 import Dashboard from './components/Dashboard';
@@ -96,6 +97,7 @@ function App() {
   const { isAuthenticated } = useContext(AuthContext);
 
   return (
+    <ThemeProvider>
     <AuthProvider>
       <Router>
         <div className="App">
@@ -125,6 +127,7 @@ function App() {
         </div>
       </Router>
     </AuthProvider>
+    </ThemeProvider>
   );
 }
 
