@@ -53,7 +53,7 @@ const Favourite = () => {
     }
 
     return (
-      <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6`}>
+      <div className={`grid grid-cols-1 sm:grid-cols-2 mt-4 lg:grid-cols-3 gap-6`}>
         {likedArticles.map((article, index) => (
           <div
             key={index}
@@ -61,7 +61,7 @@ const Favourite = () => {
           >
             <a href={article.url} target="_blank" rel="noopener noreferrer">
               <img 
-                src={article.urlToImage || defaultImage} 
+                src={article.image || defaultImage} 
                 alt={article.title} 
                 className="w-full h-48 object-cover rounded-md mb-4" 
               />
