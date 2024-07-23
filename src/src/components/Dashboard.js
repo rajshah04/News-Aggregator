@@ -1,15 +1,17 @@
-import React, { useState, useEffect, lazy } from 'react';
+import React, { useState, useEffect, lazy,useContext } from 'react';
 import axios from 'axios';
 import { FcLike, FcLikePlaceholder } from "react-icons/fc"; 
 // import { ToastContainer, toast } from 'react-toastify';
 import toast, { Toaster } from 'react-hot-toast';
 // import 'react-toastify/dist/ReactToastify.css';
 import defaultImage from '../news-notdefined.jpeg';
+import { ThemeContext } from './ThemeContext';
 
 // const apiKey = '9f14754a75274f1a893dba742f77425f';
 const apiKey = '29f8e42efe874ee2be23f0d1edb6844b';
 // const apiKey ='4dbc17e007ab436fb66416009dfb59a8';
 const Dashboard = () => {
+  const { theme } = useContext(ThemeContext);
   const [selectedCategory, setSelectedCategory] = useState('general');
   const [selectedNews, setSelectedNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -220,10 +222,10 @@ const Dashboard = () => {
     if (!news || news.length === 0) return null;
   
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 bg-black">
+      <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6  ${theme === 'light' ? 'bg-black' : 'bg-[#F9F9F9]'}`}>
         {news.map((article, index) => (
-          <div key={index} className="bg-[#212121] rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 relative">
-            <div className='w-[40px] h-[40px] bg-black shadow-lg rounded-full absolute right-2 bottom-56 grid place-items-center'>
+          <div key={index} className={`bg-[#212121] rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 relative ${theme === 'light' ? 'bg-[#333]' : 'bg-white'}`}>
+           <div className={`w-[40px] h-[40px] shadow-lg rounded-full absolute right-2 bottom-56 grid place-items-center ${theme === 'light' ? 'bg-black' : 'bg-gray-800'}`}>
               <button onClick={() => clickHandler(article)}>
                 {likedArticles.some((a) => a.url === article.url) ? (
                   <FcLike fontSize="1.75rem" />
@@ -238,16 +240,16 @@ const Dashboard = () => {
                 alt={article.title} 
                 className="w-full h-48 object-cover rounded-md mb-4" 
               />
-              <div className="p-4">
-                <p className="text-white font-semibold text-lg leading-6">{article.title}</p>
-                <p className="text-[#888888] mt-2">
+               <div className={`p-4 ${theme === 'light' ? 'text-white' : 'text-black'}`}>
+               <p className={`font-semibold text-lg leading-6 ${theme === 'light' ? 'text-white' : 'text-black'}`}>{article.title}</p>
+               <p className={`mt-2 ${theme === 'light' ? 'text-gray-400' : 'text-gray-600'}`}>
                   {article.description ? (
                     article.description.length > 100 ?
                     `${article.description.substr(0, 100)}...` : article.description
                   ) : 'No description available.'}
                 </p>
               </div>
-              <p className="text-sm text-[#888888]">{new Date(article.publishedAt).toLocaleDateString()}</p>
+              <p className={`text-sm ${theme === 'light' ? 'text-gray-500' : 'text-gray-700'}`}>{new Date(article.publishedAt).toLocaleDateString()}</p>
             </a>
           </div>
         ))}
@@ -257,15 +259,15 @@ const Dashboard = () => {
   
 
   return (
-    <div className="w-full h-full px-32 py-14 bg-black">
-        <div className='flex justify-center items-center py-0 top-10 relative w-full'>
-            <div className='absolute w-full border-[1.5px] border-white rounded-lg'></div>
+    <div className={`w-full h-full px-32 py-14 ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'}`}>
+      <div className={`flex justify-center items-center py-0 top-10 relative w-full ${theme === 'light' ? 'bg-black' : 'bg-white'}`}>
+      <div className={`absolute w-full border-[1.5px] rounded-lg ${theme === 'light' ? 'border-gray-600' : 'border-gray-300'}`}></div>
         </div> 
-        <h2 className="font-bold text-white text-[32px] pt-20 text-center">
+        <h2 className={`font-bold text-[32px] pt-20 text-center ${theme === 'light' ? 'text-white' : 'text-black'}`}>
             LATEST&nbsp;
             <span className="text-blue-700">NEWS</span>
         </h2>
-        <h2 className="font-bold text-[#888888] text-[16px] pt-2 text-center">
+        <h2 className={`font-bold text-[16px] pt-2 text-center ${theme === 'light' ? 'text-gray-400' : 'text-gray-600'}`}>
             most recent news
         </h2>
       {/* Toast Container */}
@@ -281,7 +283,7 @@ const Dashboard = () => {
                 <button
                   className={`px-4 py-2 border border-gray-300 hover:bg-transparent rounded-full transition-colors ${
                     selectedCategory === category ? 'bg-blue-700 text-white' : 'hover:bg-gray-200'
-                  }`}
+                } ${theme === 'light' ? 'text-white' : 'text-black'}`}
                   onClick={() => {
                     setSelectedCategory(category);
                     setCurrentPage(1);

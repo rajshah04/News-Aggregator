@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { ThemeContext } from './ThemeContext'; // Ensure you have ThemeContext for theme management
 
 const languages = [
   { code: "en", lang: "English" },
@@ -14,6 +15,7 @@ const languages = [
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
+  const { theme } = useContext(ThemeContext);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -24,10 +26,14 @@ const LanguageSelector = () => {
   }, [i18n, i18n.language]);
 
   return (
-    <div className="btn-container">
+    <div className={`flex space-x-4 ${theme === 'light' ? 'bg-gray-800' : 'bg-gray-100'} p-2 rounded-md`}>
       {languages.map((lng) => (
         <button
-          className={`language-btn ${lng.code === i18n.language ? "selected" : ""}`}
+          className={`px-4 py-2 rounded-md transition-colors duration-300 
+            ${lng.code === i18n.language 
+              ? (theme === 'light' ? 'bg-blue-400 text-black' : 'bg-blue-600 text-white') 
+              : (theme === 'light' ? 'bg-gray-600 text-gray-100 hover:bg-blue-500 hover:text-white' : 'bg-gray-300 text-gray-800 hover:bg-blue-500 hover:text-gray-800')
+            }`}
           key={lng.code}
           onClick={() => changeLanguage(lng.code)}
         >

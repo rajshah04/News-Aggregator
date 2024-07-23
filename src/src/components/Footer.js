@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {ThemeContext} from './ThemeContext';
 import img from '../logo news.png';
 import { GrTopCorner } from "react-icons/gr";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -11,6 +12,7 @@ import { useEffect } from 'react';
 import { FaArrowUp } from "react-icons/fa";
 
 const Footer = () => {
+    const {theme} = useContext(ThemeContext);
 
     useEffect(() => {
         const size = 10;
@@ -29,7 +31,7 @@ const Footer = () => {
     };
 
     return (
-        <div>
+        <div className={`{theme == 'dark ? 'bg-white text-black':'bg-black text-white'}`}>
             <div className="flex items-center justify-center">
                 <img
                     src={img}
@@ -38,7 +40,7 @@ const Footer = () => {
                     className="cursor-pointer"
                 />
             </div>
-            <footer className="-mt-[400px] md:-mt-[300px] bg-black text-white">
+            <footer className={`-mt-[400px] md:-mt-[300px] ${theme=='dark'? 'bg-white text-black' :'bg-black text-white'}`}>
                 <div className="w-10/12 pt-[400px] pb-10 md:pt-[350px] md:my-0 md:w-11/12 max-w-[1080px] mx-auto flex flex-col space-y-6 lg:space-y-0 lg:space-x-4 lg:flex-row justify-between">
                     <div className="flex flex-col md:max-w-[340px] lg:max-w-[260px]">
                         <div className="gap-2">
@@ -65,10 +67,10 @@ const Footer = () => {
                         <form className="relative bg-white w-[260px] mt-2 mb-4">
                         <input
                             placeholder="Your email address"
-                            className="pr-16  border-gray-300 outline-lightBlue focus:outline-blue-400 placeholder:text-sm py-2 px-4 border rounded-sm transition-all duration-200"
+                            className={`pr-16  border-gray-300 outline-lightBlue focus:outline-blue-400 placeholder:text-sm py-2 px-4 border rounded-sm transition-all duration-200 `}
                         />
                         <button
-                            className="h-[90%] bg-white absolute right-[1.5px] top-1/2 -translate-y-1/2 z-10  text-sm font-bold text-blue-400 flex rounded-sm items-center hover:text-blue-500 transition-all duration-200"
+                            className={`h-[90%] bg-white absolute right-[1.5px] top-1/2 -translate-y-1/2 z-10  text-sm font-bold text-blue-400 flex rounded-sm items-center hover:text-blue-500 transition-all duration-200 ${theme=='dark'? 'text-blue-400':'text-blue-500'}`}
                         >
                             Subscribe
                             <svg
@@ -339,9 +341,9 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="relative">
-                    <div className="circle absolute bottom-0 right-0 mb-10 mr-10 w-24 h-24 border-white rounded-full border-solid border-[2px]">
-                        <div className="relative text">
-                            <p className="absolute text-sm text-[10px] font-bold">News Aggregator - News Aggregator - </p>
+                    <div className={`circle absolute bottom-0 right-0 mb-10 mr-10 w-24 h-24 border-white rounded-full border-solid border-[2px] ${theme=='dark'? 'bg-white':'bg-black border-black'}`}>
+                        <div className='relative text'>
+                            <p className={`absolute text-sm text-[10px] font-bold `}>News Aggregator - News Aggregator -</p>
                         </div>
                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"  onClick={scrollToTop}>
                             <FaArrowUp/>
