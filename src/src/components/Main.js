@@ -3,8 +3,8 @@ import axios from 'axios';
 import defaultImage from '../news-notdefined.jpeg';
 import { FaAngleLeft } from "react-icons/fa6";
 
-const apiKey = '9f14754a75274f1a893dba742f77425f';
-// const apiKey = '29f8e42efe874ee2be23f0d1edb6844b';
+// const apiKey = '9f14754a75274f1a893dba742f77425f';
+const apiKey = '29f8e42efe874ee2be23f0d1edb6844b';
 // const apiKey ='4dbc17e007ab436fb66416009dfb59a8';
 const Main = () => {
     const [heroImages, setHeroImages] = useState([]);
@@ -46,7 +46,7 @@ const Main = () => {
                 style={{
                     backgroundImage: `url(${heroImages[currentImageIndex]})`,    
                     // backgroundImage: `url("https://assets.playgroundai.com/652187bb-b434-4561-8ae7-403fce4e1353.jpg")`,
-                    backgroundSize: 'cover',
+                    backgroundSize: 'auto',
                     backgroundPosition: 'center',
                 }}
             >
