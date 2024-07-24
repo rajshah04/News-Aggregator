@@ -281,8 +281,8 @@ const Dashboard = () => {
             {['general', 'business', 'sports', 'politics', 'entertainment'].map((category) => (
               <li key={category}>
                 <button
-                  className={`px-4 py-2 border border-gray-300 hover:bg-transparent rounded-full transition-colors ${
-                    selectedCategory === category ? 'bg-blue-700 text-white' : 'hover:bg-gray-200'
+                  className={`px-4 py-2 border border-gray-300 hover:bg-blue-700 rounded-full transition-colors ${
+                    selectedCategory === category ? 'bg-blue-700 text-white' : 'hover:bg-blue-700'
                 } ${theme === 'light' ? 'text-white' : 'text-black'}`}
                   onClick={() => {
                     setSelectedCategory(category);
@@ -300,14 +300,14 @@ const Dashboard = () => {
       {/* Selected News Section */}
       {selectedNews.length > 0 && (
         <div id="selectedNews" className="mb-8">
-          <h2 className="text-3xl font-bold text-center mb-6">{isSearching ? 'Search Results' : 'Top Headlines'}</h2>
+          <h2 className="text-3xl font-bold text-center my-6">{isSearching ? 'Search Results' : 'Top Headlines'}</h2>
           {renderNewsCards(selectedNews)}
         </div>
       )}
 
       {/* Pagination Controls */}
       {totalPages > 1 && (
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center py-6 space-x-4">
           <button
             className={`px-4 py-2 bg-blue-700 text-white rounded-full transition-opacity ${
               currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-400'

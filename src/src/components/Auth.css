@@ -37,7 +37,8 @@ body {
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
-    color: #ccc; /* Light grey text color for paragraphs */
+    /* color: #ccc; Light grey text color for paragraphs */
+    color: #fff; /* Light grey text color for paragraphs */
 }
 
 .container2 span {

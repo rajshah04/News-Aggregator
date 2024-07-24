@@ -68,7 +68,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className='flex justify-center items-center'>
-                <div className='w-5/6 border-[1.5px] border-white dark:border-black rounded-lg '></div>
+                <div className='w-5/6 border-[1.5px] border-white dark:border-gray-300 my-8 rounded-lg '></div>
             </div>
         </nav>
     );

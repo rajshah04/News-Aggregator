@@ -47,12 +47,12 @@ const Explore = () => {
                             </li>
                         </ul>
 
-                        <button className={`min-w-[32px] text-sm font-bold ${theme === 'light' ? 'bg-blue-700 text-white' : 'bg-white text-blue-700'} border flex rounded-sm items-center hover:${theme === 'light' ? 'text-blue-400' : 'text-blue-400'} transition-all duration-200 py-3 px-4 place-self-start`}>
+                        {/* <button className={`min-w-[32px] text-sm font-bold ${theme === 'light' ? 'bg-blue-700 text-white' : 'bg-white text-blue-700'} border flex rounded-sm items-center hover:${theme === 'light' ? 'text-blue-400' : 'text-blue-400'} transition-all duration-200 py-3 px-4 place-self-start`}>
                             Sign Up
                             <svg viewBox="0 0 24 24" focusable="false" className="w-[18px] h-[18px] ml-3">
                                 <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
                             </svg>
-                        </button>
+                        </button> */}
                     </div>
                     <img src={CTAImage} alt="" width="240px" height="282px" className="mt-16 pt-6 hidden lg:block" />
                 </div>
