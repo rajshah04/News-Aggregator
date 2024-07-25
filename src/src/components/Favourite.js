@@ -89,12 +89,12 @@ const Favourite = () => {
   return (
     <div>
       <Navbar />
-      <div className={`w-full h-full px-32 py-14 ${theme === 'dark' ? 'bg-white' : 'bg-black'}`}>
-        <h2 className={`font-bold text-[32px] pt-20 text-center ${theme === 'dark' ? 'text-black' : 'text-white'}`}>
+      <div className={`w-full h-full px-32 ${theme === 'dark' ? 'bg-white' : 'bg-black'}`}>
+        <h2 className={`font-bold text-[32px] pt-4 text-center ${theme === 'dark' ? 'text-black' : 'text-white'}`}>
           Favourite&nbsp;
           <span className="text-blue-700">Articles</span>
         </h2>
-        <h2 className={`font-bold text-[16px] pt-2 text-center ${theme === 'dark' ? 'text-gray-700' : 'text-[#888888]'}`}>
+        <h2 className={`font-bold text-[16px] py-2 text-center ${theme === 'dark' ? 'text-gray-700' : 'text-[#888888]'}`}>
           Liked Articles
         </h2>
         {renderLikedArticles()}

@@ -78,7 +78,7 @@ const Settings = () => {
         {news.map((article, index) => (
           <div
             key={index}
-            className={`rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 relative ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'}`}
+            className={`rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 relative ${theme === 'light' ? 'bg-[#333] text-white' : 'bg-white text-black'}`}
           >
             <div className={`w-[40px] h-[40px] ${theme === 'light' ? 'bg-black' : 'bg-white'} shadow-lg rounded-full absolute right-2 bottom-56 grid place-items-center`}>
               <button onClick={() => clickHandler(article)} className={`p-2 rounded-full ${theme === 'light' ? 'bg-black' : 'bg-white'}`}>
@@ -115,23 +115,23 @@ const Settings = () => {
   return (
     <div className={`w-full min-h-screen ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <Navbar />
-      <div className="px-32 py-14">
-        <h2 className="font-bold text-3xl pt-20 text-center uppercase">
+      <div className="px-32 py-4">
+        <h2 className="font-bold text-3xl py-4 text-center uppercase">
           multilanguage&nbsp;
           <span className="text-blue-700 uppercase">support</span>
         </h2>
-        <h2 className="font-bold text-gray-500 text-lg pt-2 text-center">
+        <h2 className="font-bold text-gray-500 text-lg py-2 text-center">
           most recent news
         </h2>
 
         {/* Language Selector */}
-        <div className="mt-10 flex justify-center space-x-4">
+        <div className="my-4 flex justify-center space-x-4">
           <LanguageSelector className="border-2 border-solid border-blue-700" />
         </div>
 
         {/* Selected News Section */}
         <div id="selectedNews" className="mb-8">
-          <h2 className="text-3xl font-bold text-center mb-6">{t("topHeadlines")}</h2>
+          <h2 className="text-3xl font-bold text-center mb-6">{t("Top Headlines")}</h2>
           {renderNewsCards(selectedNews)}
         </div>
       </div>
