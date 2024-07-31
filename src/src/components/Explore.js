@@ -20,28 +20,28 @@ const Explore = () => {
 
                 <div className={`w-11/12 max-w-[1080px] relative flex flex-row items-center justify-between space-x-20 mx-auto pt-16 ${theme === 'light' ? 'text-white' : 'text-black'}`}>
                     <div className="flex flex-col gap-5 mt-12 max-w-[600px]">
-                        <h2 className={`font-bold text-2xl text-left ${theme === 'light' ? 'text-white' : 'text-black'}`}>
+                        <h2 className={`font-bold text-2xl text-left ${theme === 'light' ? 'text-white' : 'text-white'}`}>
                             Go Beyond The Headlines: In-Depth News Aggregator
                         </h2>
-                        <div className={`w-6 h-1 ${theme === 'light' ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
-                        <p className={`text-left ${theme === 'light' ? 'text-white' : 'text-black'}`}>
+                        <div className={`w-6 h-1 ${theme === 'light' ? 'bg-blue-400' : 'bg-blue-400'}`}></div>
+                        <p className={`text-left ${theme === 'light' ? 'text-white' : 'text-white'}`}>
                             Sign up now to read the news on our platform and enjoy a seamless browsing experience. Stay updated with our top-notch news service.
                         </p>
 
                         <ul className="flex flex-row flex-wrap gap-x-12 text-white gap-y-3">
-                            <li className={`text-left ${theme === 'light' ? 'text-white' : 'text-black'} flex flex-row gap-2`}>
+                            <li className={`text-left ${theme === 'light' ? 'text-white' : 'text-white'} flex flex-row gap-2`}>
                                 <FaCheck className={`text-white mt-1 ${theme === 'light' ? 'text-white' : 'text-black'}`}/>
                                 <span>Quick Access</span>
                             </li>
-                            <li className={`text-left ${theme === 'light' ? 'text-white' : 'text-black'} flex flex-row gap-2`}>
+                        <li className={`text-left ${theme === 'light' ? 'text-white' : 'text-white'} flex flex-row gap-2`}>
                                 <FaCheck className={`text-white mt-1 ${theme === 'light' ? 'text-white' : 'text-black'}`}/>
                                 <span>Any time Any Way</span>
                             </li>
-                            <li className={`text-left ${theme === 'light' ? 'text-white' : 'text-black'} flex flex-row gap-2`}>
+                            <li className={`text-left ${theme === 'light' ? 'text-white' : 'text-white'} flex flex-row gap-2`}>
                                 <FaCheck className={`text-white mt-1 ${theme === 'light' ? 'text-white' : 'text-black'}`}/>
                                 <span>Trusted Source</span>
                             </li>
-                            <li className={`text-left ${theme === 'light' ? 'text-white' : 'text-black'} flex flex-row gap-2`}>
+                            <li className={`text-left ${theme === 'light' ? 'text-white' : 'text-white'} flex flex-row gap-2`}>
                                 <FaCheck className={`text-white mt-1 ${theme === 'light' ? 'text-white' : 'text-black'}`}/>
                                 <span>24x7 support</span>
                             </li>
