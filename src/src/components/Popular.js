@@ -1,4 +1,4 @@
-// src/Popular.js
+// Popular.js
 import React, { useContext } from 'react';
 import { FaCheck } from "react-icons/fa6";
 import { ThemeContext } from './ThemeContext';  
