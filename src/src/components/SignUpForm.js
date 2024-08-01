@@ -36,13 +36,6 @@ const SignUpForm = ({setIsActive}) => {
             // toast.error("There was an error registering");
             toast.error(error.response.data.message);
         }
-        // finally {
-        //     setFirstName('');
-        //     setLastName('');
-        //     setEmail('');
-        //     setPassword('');
-        //     setConfirmPassword('') ;
-        // }
     };
 
     return (

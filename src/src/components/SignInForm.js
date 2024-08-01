@@ -28,8 +28,6 @@ const SignInForm = () => {
             setIsAuthenticated(true) ;          
             toast.success("Successfully logged in");
             navigate('/home') ;
-            // localStorage.setItem("likedArticles", []) ;
-            // console.log("Local Storage set to null") ;
 
         } catch (error) {
             console.log('There was an error logging in!', error);
@@ -41,8 +39,8 @@ const SignInForm = () => {
         <form onSubmit={handleSignIn} className=''>
             <h1 className='font-bold text-3xl'>Sign In</h1>
             <span>or use your email password</span>
+            
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            {/* <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} /> */}
             
             <input className='relative' type={showPassword ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 {showPassword ? (
