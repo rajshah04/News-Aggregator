@@ -26,7 +26,7 @@ const Settings = () => {
         updatedLikedArticles.splice(articleIndex, 1);
 
         // Remove from bookmark
-        await axios.delete('http://localhost:4000/api/v1/deleteBookmarkedNews', {
+        await axios.delete(`${process.env.REACT_APP_BASE_URL}` + "/deleteBookmarkedNews", {
           headers: {
             Authorization: `Bearer ${token}`
           },
@@ -40,7 +40,7 @@ const Settings = () => {
         updatedLikedArticles = [...likedArticles, article];
 
         // Add to bookmark
-        await axios.post('http://localhost:4000/api/v1/addToBookmarkedNews', article, {
+        await axios.post(`${process.env.REACT_APP_BASE_URL}` + "/addToBookmarkedNews", article, {
           headers: {
             'Authorization': `Bearer ${token}`
           },

@@ -20,7 +20,7 @@ const SignInForm = () => {
     const handleSignIn = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4000/api/v1/login', { email, password });
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}` + "/login", { email, password });
             const token = response.data.token ;
             // store the token in local storage
             localStorage.setItem('token', token);

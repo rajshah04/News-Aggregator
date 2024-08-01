@@ -13,7 +13,7 @@ const Favourite = () => {
     const fetchLikedArticles = async () => {
       try {
         const token = localStorage.getItem('token'); // Assuming the token is stored in local storage
-        const response = await axios.get('http://localhost:4000/api/v1/getAllBookmarkedNews', {
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}` + "/getAllBookmarkedNews", {
           headers: {
             'Authorization': `Bearer ${token}` // Adjust this according to your API's requirements
           },

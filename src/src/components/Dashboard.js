@@ -33,7 +33,7 @@ const Dashboard = () => {
         console.log("Article's Title : ", article.title) ;
         console.log("Token for removing the like", token) ;
 
-        const removeFromBookmark = await axios.delete('http://localhost:4000/api/v1/deleteBookmarkedNews', {
+        const removeFromBookmark = await axios.delete(`${process.env.REACT_APP_BASE_URL}` + "/deleteBookmarkedNews", {
           headers: {
             Authorization: `Bearer ${token}`
           },
@@ -50,7 +50,7 @@ const Dashboard = () => {
         
         console.log("Adding to bookmarked news") ;
         console.log("Article : ", article) ;
-        const addToBookmark = await axios.post('http://localhost:4000/api/v1/addToBookmarkedNews', 
+        const addToBookmark = await axios.post(`${process.env.REACT_APP_BASE_URL}` + "/addToBookmarkedNews", 
           article, {
           headers: {
             'Authorization': `Bearer ${token}` // Adjust this according to your API's requirements
