@@ -68,7 +68,7 @@ const Search = () => {
 
       if (likedArticles.some((a) => a.title === article.title)) {
         updatedLikedArticles = likedArticles.filter((a) => a.title !== article.title);
-        await axios.delete('http://localhost:4000/api/v1/deleteBookmarkedNews', {
+        await axios.delete(`${process.env.REACT_APP_BASE_URL}` + "/deleteBookmarkedNews", {
           headers: {
             Authorization: `Bearer ${token}`
           },
@@ -79,7 +79,7 @@ const Search = () => {
         toast.success("Removed from Favourites");
       } else {
         updatedLikedArticles = [...likedArticles, article];
-        await axios.post('http://localhost:4000/api/v1/addToBookmarkedNews', article, {
+        await axios.post(`${process.env.REACT_APP_BASE_URL}` + "/addToBookmarkedNews", article, {
           headers: {
             'Authorization': `Bearer ${token}`
           },
